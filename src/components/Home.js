@@ -3,7 +3,8 @@ import { TouchableOpacity , StyleSheet, Text, View} from 'react-native';
 
 export default class Home extends React.Component {
     goToCameraRoll() {
-        console.warn('in goToCameraRoll');
+        console.warn('in goToCameraRoll', this.props);
+        this.props.navigation.navigate('CameraRoll');
     }
 
     render() {
@@ -12,7 +13,7 @@ export default class Home extends React.Component {
                 <View style={styles.cardLayout}>
                     <TouchableOpacity 
                     style={styles.card}
-                    onPress={this.goToCameraRoll}
+                    onPress={() =>this.goToCameraRoll()}
                     >
                         <Text style={styles.welcome}>Check CameraRoll Here</Text>
                     </TouchableOpacity>
