@@ -1,25 +1,27 @@
 import React, { Component } from 'react';
-import { TouchableOpacity , StyleSheet, Text, View} from 'react-native';
+import { TouchableOpacity, StyleSheet, Text, View } from 'react-native';
 
 export default class Home extends React.Component {
-    goToCameraRoll() {
-        console.warn('in goToCameraRoll', this.props);
-        this.props.navigation.navigate('CameraRoll');
+    goToScreen(screenName) {
+        this.props.navigation.navigate(screenName);
     }
 
     render() {
         return (
             <View style={styles.container}>
                 <View style={styles.cardLayout}>
-                    <TouchableOpacity 
-                    style={styles.card}
-                    onPress={() =>this.goToCameraRoll()}
+                    <TouchableOpacity
+                        style={styles.card}
+                        onPress={() => this.goToScreen('CameraRoll')}
                     >
                         <Text style={styles.welcome}>Check CameraRoll Here</Text>
                     </TouchableOpacity>
-                    <View style={styles.card}>
-                        <Text style={styles.welcome}>Welcome to React Native|</Text>
-                    </View>
+                    <TouchableOpacity
+                        style={styles.card}
+                        onPress={() => this.goToScreen('ImageCrop')}
+                    >
+                        <Text style={styles.welcome}>Image Crop Picker</Text>
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.cardLayout}>
                     <View style={styles.card}>
@@ -50,8 +52,8 @@ const styles = StyleSheet.create({
     card: {
         flex: 0.5,
         borderColor: 'black',
-        borderRadius:10,
-        padding:10,
+        borderRadius: 10,
+        padding: 10,
         borderWidth: 2
     },
     welcome: {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View, CameraRoll, ScrollView, Button, Image, PermissionsAndroid } from 'react-native';
+import { Dimensions , StyleSheet, Text, View, CameraRoll, ScrollView, Button, Image, PermissionsAndroid } from 'react-native';
 
 export default class CameraRollComponent extends React.Component {
     constructor(props) {
